@@ -40,7 +40,7 @@ app.use(function(err, req, res, next) {
 });
 
 // Rutas genericas
-app.post('/recurso', Controladores.twichWebhook);
+app.post('/twitchwebhook', Controladores.twichWebhook);
 
 
 app.listen(3001, () => {

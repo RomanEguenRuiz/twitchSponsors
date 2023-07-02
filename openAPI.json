@@ -1,35 +1,50 @@
 {
-  "openapi": "3.0.3",
+  "openapi": "3.0.0",
   "info": {
-    "title": "Title",
-    "description": "Title",
+    "title": "API de Ejemplo",
+    "description": "Una API de ejemplo para ilustrar la especificación OpenAPI",
     "version": "1.0.0"
   },
   "servers": [
     {
-      "url": "https"
+      "url": "http://localhost:3001"
     }
   ],
   "paths": {
-    "/api/v1/": {
-      "get": {
-        "tags": [
-          "api"
-        ],
-        "summary": "Summary",
-        "description": "Description",
-        "operationId": "operationId",
-        "parameters": [
-          {
-            "name": "name",
-            "in": "query",
-            "description": "Description",
-            "required": true,
-            "schema": {
-              "type": "string"
+    "/twitchwebhook": {
+      "post": {
+        "summary": "Procesar notificación de Twitch",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TwitchNotification"
               }
+            }
           }
-        ]
+        },
+        "responses": {
+          "200": {
+            "description": "Notificación procesada correctamente"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "TwitchNotification": {
+        "type": "object",
+        "properties": {
+          "event": {
+            "type": "string"
+          },
+          "data": {
+            "type": "object"
+          }
+        },
+        "required": ["event", "data"]
       }
     }
   }
