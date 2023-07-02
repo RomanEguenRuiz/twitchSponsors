@@ -1,0 +1,17 @@
+{
+  "procesos": [
+    {"chanel_points":[{
+      "id": 1,
+      "llamada_twitch": "puntos_canal",
+      "comando": "echo 'Lanzando comando para puntos de canal'"
+    }
+    ]},
+    {"chanel_bits":[
+      {
+        "id": 2,
+        "llamada_twitch": "bits_canal",
+        "comando": "echo 'Lanzando comando para bits de canal'"
+      }
+    ]}
+  ]
+}

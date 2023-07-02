@@ -1,0 +1,36 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Title",
+    "description": "Title",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https"
+    }
+  ],
+  "paths": {
+    "/api/v1/": {
+      "get": {
+        "tags": [
+          "api"
+        ],
+        "summary": "Summary",
+        "description": "Description",
+        "operationId": "operationId",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Description",
+            "required": true,
+            "schema": {
+              "type": "string"
+              }
+          }
+        ]
+      }
+    }
+  }
+}
